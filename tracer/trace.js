@@ -53,4 +53,6 @@ const main = async () => {
             `,
         },
     ]);
+
+    // {"tracer":"callTracer"} for gethtrace2
 }
