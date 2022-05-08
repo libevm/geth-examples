@@ -47,10 +47,10 @@ const main = async () => {
     const tx1 = await signer.sendTransaction({ ...params, ...overrides })
     const tx1Recp = await tx1.wait()
 
-    console.log('overrides', JSON.stringify(overrides, null, 4))
 
-    console.log('contractAddress', contractAddress)
     console.log('gasUsed (type 0)', tx0Recp.gasUsed.toString())
+    console.log('========')
+    console.log('accessList', JSON.stringify(overrides, null, 4))
     console.log('gasUsed (type 1)', tx1Recp.gasUsed.toString())
 }
 
