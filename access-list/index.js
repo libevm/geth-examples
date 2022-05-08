@@ -37,7 +37,7 @@ const main = async () => {
     // Create transaction list
     const accessListDump = await provider.send('eth_createAccessList', [{ ...params, gas: '0x55730' }, "pending"])
     const overrides = {
-        type: 1,
+        type: 2,
         accessList: accessListDump.accessList
     }
 
@@ -48,10 +48,10 @@ const main = async () => {
     const tx1Recp = await tx1.wait()
 
 
-    console.log('gasUsed (type 0)', tx0Recp.gasUsed.toString())
+    console.log('gasUsed (default)', tx0Recp.gasUsed.toString())
     console.log('========')
     console.log('accessList', JSON.stringify(overrides, null, 4))
-    console.log('gasUsed (type 1)', tx1Recp.gasUsed.toString())
+    console.log('gasUsed (with access list)', tx1Recp.gasUsed.toString())
 }
 
 main()
