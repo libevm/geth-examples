@@ -50,7 +50,7 @@ const main = async () => {
   // Call with no state overrides
   const call1 = await provider.send("eth_call", callParams);
 
-  // Call with no state overrides
+  // Call with state overrides
   const call2 = await provider.send("eth_call", [...callParams, stateDiff]);
 
   console.log("Allowance of from -> to without stateDiff", call1);
